@@ -1,14 +1,14 @@
 package Lingua::Words::Offensive::Wiktionary::EO;
 
 use v5.6;
+use utf8;
 use strict;
 use warnings;
-use utf8;
 
 our $VERSION = '0.00_1';
 
 # retrieved 2013-03-30
-our @words = qw(
+sub words { qw(
     ĉuras
     ĉuri
     ĉuris
@@ -56,6 +56,6 @@ our @words = qw(
     pugtruoj
     pugtruojn
     pugtruon
-);
+) }
 
 1;

@@ -1,11 +1,28 @@
 package Lingua::Words::Offensive;
 
 use v5.6;
-use strict;
-use warnings;
 use utf8;
+use Moo;
+use Lingua::Words::Offensive::Wiktionary;
 
 our $VERSION = '0.00_1';
+
+my %sources = (
+    wiktionary => 'Wiktionary',
+);
+
+has source => (
+    is      => 'rw',
+    isa     => sub { die "Invalid source '$_[0]'" unless $_[0] },
+    coerce  => sub { $sources{ lc $_[0] } },
+    default => sub { 'Wiktionary' },
+);
+
+sub words {
+    my ($self, $language) = @_;
+    my $module = __PACKAGE__ . '::' . $self->source;
+    return $module->words($language);
+}
 
 1;
 

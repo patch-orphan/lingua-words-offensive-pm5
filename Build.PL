@@ -1,3 +1,4 @@
+use utf8;
 use strict;
 use warnings;
 use Module::Build;
@@ -14,10 +15,12 @@ my $builder = Module::Build->new(
         'Test::More' => 0.41,  # diag()
     },
     requires => {
-        'perl'     => '5.6.0',
-        'strict'   => 0,
-        'utf8'     => 0,
-        'warnings' => 0,
+        'perl'            => '5.6.0',
+        'strict'          => 0,
+        'utf8'            => 0,
+        'warnings'        => 0,
+        'Module::Runtime' => 0,
+        'Moo'             => 0,
     },
     meta_merge => {
         resources => {

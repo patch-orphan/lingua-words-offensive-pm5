@@ -1,0 +1,16 @@
+Lingua::Words::Offensive Installation
+
+# install via cpanminus
+cpanm Lingua::Words::Offensive
+
+# install via CPAN shell
+cpan Lingua::Words::Offensive
+
+# install via ActivePerl
+ppm install Lingua::Words::Offensive
+
+# install manually
+perl Build.PL
+./Build
+./Build test
+./Build install
